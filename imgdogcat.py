@@ -17,7 +17,8 @@ parser.add_argument('-g', '--gif', action='store_true', help='Fetch a random gif
 args = parser.parse_args()
 
 if args.gif:
-    url = "https://api.giphy.com/v1/gifs/random?api_key=qYBdjc9BCKh4NLmuVgWiCakpWT3OraDz&tag=new+jeans&rating=g"
+    tags = ["new+jeans", "twice", "ive", "black+pink", "red+velvet", "itzy", "aespa"]
+    url = "https://api.giphy.com/v1/gifs/random?api_key=qYBdjc9BCKh4NLmuVgWiCakpWT3OraDz&tag=" + random.choice(tags) + "&rating=g"
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
