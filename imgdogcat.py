@@ -43,10 +43,8 @@ else:
 response = requests.get(image_url)
 image = Image.open(io.BytesIO(response.content)).convert("RGBA")
 
-max_width = 800
-max_height = 600
-if image.width > max_width or image.height > max_height:
-    image.thumbnail((max_width, max_height))
+max_width, max_height = 800, 600
+image.thumbnail((max_width, max_height))
 
 mask = Image.new('L', (image.width, image.height), 0)
 draw = ImageDraw.Draw(mask)
