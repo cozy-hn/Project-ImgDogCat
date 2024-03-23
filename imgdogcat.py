@@ -59,7 +59,6 @@ with NamedTemporaryFile(delete=False, suffix='.png') as tmp_file:
     image.save(tmp_file, format='PNG')
     tmp_file_name = tmp_file.name
     
-imgcat_path = os.path.expanduser('~/.iterm2/imgcat')
 run(["echo"])
-run([imgcat_path, tmp_file_name])
+run(["./imgcat.sh", tmp_file_name])
 os.remove(tmp_file_name)
