@@ -5,7 +5,7 @@ This repository contains a program designed to display random images of dogs and
 
 <img width="332" alt="image" src="https://github.com/cozy-hn/Project-ImgDogCat/assets/110678456/66d53b11-df14-4e13-ac95-80ff0fc814ff">
 <img width="410" alt="image" src="https://github.com/cozy-hn/Project-ImgDogCat/assets/110678456/adf32458-5945-486d-983e-15bf72c49e30">
-<img width="455" alt="image" src="https://github.com/cozy-hn/Project-ImgDogCat/assets/110678456/c1b87bf3-6987-4871-8e62-b102ebf1a77f">
+<img width="357" alt="image" src="https://github.com/cozy-hn/Project-ImgDogCat/assets/110678456/c418c4a6-c562-4155-bd2c-5dbcb0395229">
 <img width="400" alt="image" src="https://github.com/cozy-hn/Project-ImgDogCat/assets/110678456/11faeed2-7049-422d-8d96-a2ef1d9a4a0d">
 
 # How to use
