@@ -13,7 +13,23 @@ import os
 parser = argparse.ArgumentParser(description='Fetch a random dog or cat image.')
 parser.add_argument('-d', '--dog', action='store_true', help='Fetch a random dog image.')
 parser.add_argument('-c', '--cat', action='store_true', help='Fetch a random cat image.')
+parser.add_argument('-g', '--gif', action='store_true', help='Fetch a random gif image.')
 args = parser.parse_args()
+
+if args.gif:
+    url = "https://api.giphy.com/v1/gifs/random?api_key=qYBdjc9BCKh4NLmuVgWiCakpWT3OraDz&tag=new+jeans&rating=pg"
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        url = data.get('data', {}).get('images', {}).get('original', {}).get('url')
+        if not url:
+            print('Error fetching gif URL')
+        else:
+            run(["echo"])
+            run(["./imgcat.sh", "-u", url])
+    else:
+        print('Error fetching gif')
+    sys.exit()
 
 if args.dog:
     url = "https://dog.ceo/api/breeds/image/random"
