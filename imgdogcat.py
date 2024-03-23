@@ -20,6 +20,7 @@ if args.dog:
     json_key = 'message'
 elif args.cat:
     url = "https://api.thecatapi.com/v1/images/search"
+    json_key = 'url'
 else:
     if bool(random.getrandbits(1)):
         url = "https://dog.ceo/api/breeds/image/random"
