@@ -5,12 +5,12 @@ This repository contains a program designed to display random images of dogs and
 
 ###For M1
 ```bash
-curl -L https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.1.0/imgcat.sh && curl -L -o imgdogcat https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.1.0/imgdogcat_m1 &&  chmod +x imgdogcat imgcat.sh
+curl -L -O https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.1.0/imgcat.sh && curl -L -o imgdogcat https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.1.0/imgdogcat_m1 &&  chmod +x imgdogcat imgcat.sh
 ```
 
 ###For x86
 ```bash
-curl -L https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.1.0/imgcat.sh && curl -L -o imgdogcat https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.1.0/imgdogcat_intelx86 && chmod +x imgdogcat imgcat.sh
+curl -L -O https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.1.0/imgcat.sh && curl -L -o imgdogcat https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.1.0/imgdogcat_intelx86 && chmod +x imgdogcat imgcat.sh
 ```
 
 ## imgdogcat v0.1.0
