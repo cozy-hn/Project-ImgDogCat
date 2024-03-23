@@ -3,5 +3,5 @@ This repository contains a program designed to display random images of dogs and
 
 ## How to install
 ```zsh
-curl -L -o imgdogcat https://bit.ly/imgdogcat && chmod +x imgdogcat
+curl -L -o imgdogcat https://bit.ly/imgdogcat_ && chmod -R +x imgdogcat
 ```
