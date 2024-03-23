@@ -1,7 +1,19 @@
 # Project-ImgDogCat
 This repository contains a program designed to display random images of dogs and cats within iTerm2, utilizing the imgcat script for seamless integration. Ideal for pet lovers and developers looking for a touch of whimsy in their terminal sessions.
 
-# imgdogcat v0.1.0
+#How to use
+
+###For M1
+```bash
+curl -L https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.1.0/imgcat.sh && curl -L -o imgdogcat https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.1.0/imgdogcat_m1 &&  chmod +x imgdogcat imgcat.sh
+```
+
+###For x86
+```bash
+curl -L https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.1.0/imgcat.sh && curl -L -o imgdogcat https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.1.0/imgdogcat_intelx86 && chmod +x imgdogcat imgcat.sh
+```
+
+## imgdogcat v0.1.0
 
 We are thrilled to present the release of imgdogcat v0.1.0, tailored for developers and animal enthusiasts. This innovative feature allows users to randomly display cat or dog images in their terminal, offering a delightful and refreshing break during coding sessions.
 
