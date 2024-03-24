@@ -16,10 +16,14 @@ parser.add_argument('-c', '--cat', action='store_true', help='Fetch a random cat
 parser.add_argument('-g', '--gif', action='store_true', help='Fetch a random gif image.')
 args = parser.parse_args()
 
+script_directory = os.path.dirname(os.path.realpath(__file__))
+imgcat_path = os.path.join(script_directory, 'imgcat.sh')
+print(imgcat_path)
+
 if args.gif:
     # tags = ["new+jeans", "twice", "ive", "black+pink", "red+velvet", "itzy", "aespa", "LE+SSERAFIM"]
     tags = ["new+jeans", "aespa", "LE+SSERAFIM"]
-    url = "https://api.giphy.com/v1/gifs/random?api_key=qYBdjc9BCKh4NLmuVgWiCakpWT3OraDz&tag=" + random.choice(tags)
+    url = "https://api.giphy.com/v1/gifs/random?api_key=qYBdjc9BCKh4NLmuVgWiCakpWT3OraDz&tag=" + random.choice(tags) + "+Kpop"
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
@@ -28,7 +32,7 @@ if args.gif:
             print('Error fetching gif URL')
         else:
             run(["echo"])
-            run(["./imgcat.sh", "-u", url])
+            run([imgcat_path, "-u", "-W", "50%", url])
     else:
         print('Error fetching gif')
     sys.exit()
@@ -75,7 +79,8 @@ image.putalpha(mask)
 with NamedTemporaryFile(delete=False, suffix='.png') as tmp_file:
     image.save(tmp_file, format='PNG')
     tmp_file_name = tmp_file.name
-    
+
+
 run(["echo"])
-run(["./imgcat.sh", tmp_file_name])
+run([imgcat_path, tmp_file_name])
 os.remove(tmp_file_name)
