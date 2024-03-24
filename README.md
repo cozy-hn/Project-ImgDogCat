@@ -17,7 +17,7 @@ curl -L -O https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.2.0
 
 ### For x86
 ```bash
-curl -L -O https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.1.0/imgcat.sh && curl -L -o imgdogcat https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.1.0/imgdogcat_intelx86 && chmod +x imgdogcat imgcat.sh
+curl -L -O https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.2.0/imgcat.sh && curl -L -o imgdogcat https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.2.0/imgdogcat_intelx86 && chmod +x imgdogcat imgcat.sh
 ```
 
 ## imgdogcat v0.1.0
