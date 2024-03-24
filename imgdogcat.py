@@ -16,9 +16,13 @@ parser.add_argument('-c', '--cat', action='store_true', help='Fetch a random cat
 parser.add_argument('-g', '--gif', action='store_true', help='Fetch a random gif image.')
 args = parser.parse_args()
 
-script_directory = os.path.dirname(os.path.realpath(__file__))
+if getattr(sys, 'frozen', False):
+    script_directory = os.path.dirname(sys.executable)
+else:
+    script_directory = os.path.dirname(os.path.abspath(__file__))
+
 imgcat_path = os.path.join(script_directory, 'imgcat.sh')
-print(imgcat_path)
+
 
 if args.gif:
     # tags = ["new+jeans", "twice", "ive", "black+pink", "red+velvet", "itzy", "aespa", "LE+SSERAFIM"]
@@ -82,5 +86,5 @@ with NamedTemporaryFile(delete=False, suffix='.png') as tmp_file:
 
 
 run(["echo"])
-run([imgcat_path, tmp_file_name])
+run([imgcat_path, "-W", "40%", tmp_file_name])
 os.remove(tmp_file_name)
