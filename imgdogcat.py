@@ -13,13 +13,31 @@ import os
 parser = argparse.ArgumentParser(description='Fetch a random dog or cat image.')
 parser.add_argument('-d', '--dog', action='store_true', help='Fetch a random dog image.')
 parser.add_argument('-c', '--cat', action='store_true', help='Fetch a random cat image.')
+parser.add_argument('-g', '--gif', action='store_true', help='Fetch a random gif image.')
 args = parser.parse_args()
+
+if args.gif:
+    tags = ["new+jeans", "twice", "ive", "black+pink", "red+velvet", "itzy", "aespa", "LE+SSERAFIM"]
+    url = "https://api.giphy.com/v1/gifs/random?api_key=qYBdjc9BCKh4NLmuVgWiCakpWT3OraDz&tag=" + random.choice(tags)
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        url = data.get('data', {}).get('images', {}).get('original', {}).get('url')
+        if not url:
+            print('Error fetching gif URL')
+        else:
+            run(["echo"])
+            run(["./imgcat.sh", "-u", url])
+    else:
+        print('Error fetching gif')
+    sys.exit()
 
 if args.dog:
     url = "https://dog.ceo/api/breeds/image/random"
     json_key = 'message'
 elif args.cat:
     url = "https://api.thecatapi.com/v1/images/search"
+    json_key = 'url'
 else:
     if bool(random.getrandbits(1)):
         url = "https://dog.ceo/api/breeds/image/random"
@@ -42,10 +60,8 @@ else:
 response = requests.get(image_url)
 image = Image.open(io.BytesIO(response.content)).convert("RGBA")
 
-max_width = 800
-max_height = 600
-if image.width > max_width or image.height > max_height:
-    image.thumbnail((max_width, max_height))
+max_width, max_height = 800, 600
+image.thumbnail((max_width, max_height))
 
 mask = Image.new('L', (image.width, image.height), 0)
 draw = ImageDraw.Draw(mask)
