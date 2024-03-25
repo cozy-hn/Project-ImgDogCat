@@ -17,7 +17,7 @@ curl -L -O https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.3.0
 
 ### For x86
 ```bash
-curl -L -O https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.2.2/imgcat.sh && curl -L -o imgdogcat https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.2.2/imgdogcat_intelx86 && chmod +x imgdogcat imgcat.sh
+curl -L -O https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.3.0/imgcat.sh && curl -L -o imgdogcat https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.3.0/imgdogcat_intelx86 && chmod +x imgdogcat imgcat.sh
 ```
 
 ## Useful aliase examples
@@ -30,7 +30,7 @@ alias gg='path/to/imgdogcat --gif'
 
 ## imgdogcat v0.3.0
 
-We are thrilled to present the release of imgdogcat v0.1.0, tailored for developers and animal enthusiasts. This innovative feature allows users to randomly display cat or dog images in their terminal, offering a delightful and refreshing break during coding sessions.
+We are thrilled to present the release of imgdogcat v0.3.0, tailored for developers and animal enthusiasts. This innovative feature allows users to randomly display cat or dog images in their terminal, offering a delightful and refreshing break during coding sessions.
 
 ## Features
 
