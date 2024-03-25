@@ -20,7 +20,7 @@ cd ~ && mkdir -p imgdogcat && cd imgdogcat && curl -L -O https://github.com/cozy
 cd ~ && mkdir -p imgdogcat && cd imgdogcat && curl -L -O https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.3.0/imgcat.sh && curl -L -o imgdogcat https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.3.0/imgdogcat_intelx86 && chmod +x imgdogcat imgcat.sh
 ```
 
-## Useful aliase examples
+## Useful alias examples
 
 ```bash
 alias bark='~/imgdogcat/imgdogcat --dog'
