@@ -14,6 +14,7 @@ parser = argparse.ArgumentParser(description='Fetch a random dog or cat image.')
 parser.add_argument('-d', '--dog', action='store_true', help='Fetch a random dog image.')
 parser.add_argument('-c', '--cat', action='store_true', help='Fetch a random cat image.')
 parser.add_argument('-g', '--gif', action='store_true', help='Fetch a random gif image.')
+parser.add_argument('-s', '--search', type=str, help='Fetch a random gif image based on search term.')
 args = parser.parse_args()
 
 if getattr(sys, 'frozen', False):
@@ -24,10 +25,14 @@ else:
 imgcat_path = os.path.join(script_directory, 'imgcat.sh')
 
 
-if args.gif:
-    # tags = ["new+jeans", "twice", "ive", "black+pink", "red+velvet", "itzy", "aespa", "LE+SSERAFIM"]
-    tags = ["new+jeans", "aespa", "LE+SSERAFIM"]
-    url = "https://api.giphy.com/v1/gifs/random?api_key=qYBdjc9BCKh4NLmuVgWiCakpWT3OraDz&tag=" + random.choice(tags) + "+Kpop"
+if args.gif or args.search:
+    if args.search:
+        search_query = args.search.replace(' ', '+')
+    else:
+        # tags = ["new+jeans", "twice", "ive", "black+pink", "red+velvet", "itzy", "aespa", "LE+SSERAFIM"]
+        tags = ["new+jeans", "aespa", "LE+SSERAFIM"]
+        search_query = random.choice(tags) + "+Kpop"
+    url = "https://api.giphy.com/v1/gifs/random?api_key=qYBdjc9BCKh4NLmuVgWiCakpWT3OraDz&tag=" + search_query
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
