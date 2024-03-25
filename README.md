@@ -8,7 +8,7 @@ This repository contains a program designed to display random images of dogs and
 <img width="357" alt="image" src="https://github.com/cozy-hn/Project-ImgDogCat/assets/110678456/c418c4a6-c562-4155-bd2c-5dbcb0395229">
 <img width="400" alt="image" src="https://github.com/cozy-hn/Project-ImgDogCat/assets/110678456/11faeed2-7049-422d-8d96-a2ef1d9a4a0d">
 
-# How to use
+# How to download
 
 ### For M1
 ```bash
@@ -47,6 +47,23 @@ We are thrilled to present the release of imgdogcat v0.1.0, tailored for develop
   Please download the binary corresponding to your machine's architecture.
 
 - **Terminal Compatibility**: This tool is optimized for use in iTerm2 with the `imgcat` feature. For the best experience, please use iTerm2 as your terminal. Make sure that both the executable file and the `imgcat.sh` script are located in the same directory.
+
+## Using imgdogcat in VSCode Terminal
+
+To properly use imgdogcat in the Visual Studio Code terminal and display images directly, you must enable the option to support images within VSCode settings. Follow these steps to enable image support:
+
+1. Open Visual Studio Code.
+2. Go to `File > Preferences > Settings` (or `Code > Preferences > Settings` on Mac).
+3. In the search bar at the top, type `Terminal > Integrated: Enable Images`.
+4. Find the setting labeled **Enable Images** under the section **Terminal > Integrated**.
+5. Check the box next to **Enable Images** to allow images to be displayed in the terminal.
+6. Restart VSCode for the changes to take effect.
+
+<img width="491" alt="image" src="https://github.com/cozy-hn/Project-ImgDogCat/assets/110678456/3da355aa-323a-4032-b217-1594f566e483">
+
+- Once you've enabled this option, you should be able to use imgdogcat in your VSCode terminal and see images directly in the output.
+- But gif images are not supported in the VSCode terminal. 🥲
+
 
 ## Installation
 
