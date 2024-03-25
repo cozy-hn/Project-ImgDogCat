@@ -37,6 +37,7 @@ We are thrilled to present the release of imgdogcat v0.1.0, tailored for develop
 - `--cat`, `-c` option: Show a random cat picture.
 - `--dog`, `-d` option: Show a random dog picture.
 - `--gif`, `-g` option: Show a random k-pop gif.
+- `--search`, `-s` option: Show a random gif with searched category
 - No specific option: Randomly displays a cat or dog picture.
 
 ## Compatibility and Requirements
@@ -83,6 +84,7 @@ Execute the binary with your choice of option:
 ./imgdogcat --cat   # Displays a random cat image
 ./imgdogcat --dog   # Displays a random dog image
 ./imgdogcat --gif  # Displays a random gif image
+./imgdogcat --search # Displays a random gif image within searched category
 ./imgdogcat         # Randomly displays a cat or dog image
 ```
 
