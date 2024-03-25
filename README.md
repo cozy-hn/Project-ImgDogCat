@@ -12,20 +12,20 @@ This repository contains a program designed to display random images of dogs and
 
 ### For M1
 ```bash
-curl -L -O https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.3.0/imgcat.sh && curl -L -o imgdogcat https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.3.0/imgdogcat_m1 &&  chmod +x imgdogcat imgcat.sh
+cd ~ && mkdir -p imgdogcat && cd imgdogcat && curl -L -O https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.3.0/imgcat.sh && curl -L -o imgdogcat https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.3.0/imgdogcat_m1 && chmod +x imgdogcat imgcat.sh
 ```
 
 ### For x86
 ```bash
-curl -L -O https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.3.0/imgcat.sh && curl -L -o imgdogcat https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.3.0/imgdogcat_intelx86 && chmod +x imgdogcat imgcat.sh
+cd ~ && mkdir -p imgdogcat && cd imgdogcat && curl -L -O https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.3.0/imgcat.sh && curl -L -o imgdogcat https://github.com/cozy-hn/Project-ImgDogCat/releases/download/v0.3.0/imgdogcat_intelx86 && chmod +x imgdogcat imgcat.sh
 ```
 
 ## Useful aliase examples
 
 ```bash
-alias bark='path/to/imgdogcat --dog'
-alias meow='path/to/imgdogcat --cat'
-alias gg='path/to/imgdogcat --gif'
+alias bark='~/imgdogcat/imgdogcat --dog'
+alias meow='~/imgdogcat/imgdogcat --cat'
+alias gg='~/imgdogcat/imgdogcat --gif'
 ```
 
 ## imgdogcat v0.3.0
