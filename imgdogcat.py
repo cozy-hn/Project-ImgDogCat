@@ -9,6 +9,7 @@ import random
 from subprocess import run
 from tempfile import NamedTemporaryFile
 import os
+from urllib.parse import quote
 
 parser = argparse.ArgumentParser(description='Fetch a random dog or cat image.')
 parser.add_argument('-d', '--dog', action='store_true', help='Fetch a random dog image.')
@@ -29,10 +30,8 @@ if args.gif or args.search:
     if args.search:
         search_query = args.search.replace(' ', '+')
     else:
-        # tags = ["new+jeans", "twice", "ive", "black+pink", "red+velvet", "itzy", "aespa", "LE+SSERAFIM"]
-        tags = ["new+jeans", "aespa", "LE+SSERAFIM"]
-        search_query = random.choice(tags) + "+Kpop"
-    url = "https://api.giphy.com/v1/gifs/random?api_key=qYBdjc9BCKh4NLmuVgWiCakpWT3OraDz&tag=" + search_query
+        search_query = "@Helmets"
+    url = "https://api.giphy.com/v1/gifs/random?api_key=qYBdjc9BCKh4NLmuVgWiCakpWT3OraDz&tag=" + quote(search_query)
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
@@ -91,5 +90,5 @@ with NamedTemporaryFile(delete=False, suffix='.png') as tmp_file:
 
 
 run(["echo"])
-run([imgcat_path, "-W", "40%", tmp_file_name])
+run([imgcat_path, "-H", "70%", tmp_file_name])
 os.remove(tmp_file_name)
