@@ -11,11 +11,12 @@ from tempfile import NamedTemporaryFile
 import os
 from urllib.parse import quote
 
-parser = argparse.ArgumentParser(description='Fetch a random dog or cat image.')
+parser = argparse.ArgumentParser(description='Fetch a random dog or cat image. + Gif images from giphy')
 parser.add_argument('-d', '--dog', action='store_true', help='Fetch a random dog image.')
 parser.add_argument('-c', '--cat', action='store_true', help='Fetch a random cat image.')
 parser.add_argument('-g', '--gif', action='store_true', help='Fetch a random gif image.')
 parser.add_argument('-s', '--search', type=str, help='Fetch a random gif image based on search term.')
+parser.add_argument('-a', '--api', type=str, help='you can use your own api key which you can get from giphy (only for gifs)')
 args = parser.parse_args()
 
 if getattr(sys, 'frozen', False):
@@ -27,11 +28,15 @@ imgcat_path = os.path.join(script_directory, 'imgcat.sh')
 
 
 if args.gif or args.search:
+    if args.api:
+        api_key = args.api
+    else:
+        api_key = random.choice(['SP4SLYSewyr6xgRGEx4RMPl7WyRqnbKV','qYBdjc9BCKh4NLmuVgWiCakpWT3OraDz'])
     if args.search:
         search_query = args.search.replace(' ', '+')
     else:
         search_query = "@Helmets"
-    url = "https://api.giphy.com/v1/gifs/random?api_key=qYBdjc9BCKh4NLmuVgWiCakpWT3OraDz&tag=" + quote(search_query)
+    url = f"https://api.giphy.com/v1/gifs/random?api_key={api_key}&tag=" + quote(search_query)
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
@@ -40,9 +45,9 @@ if args.gif or args.search:
             print('Error fetching gif URL')
         else:
             run(["echo"])
-            run([imgcat_path, "-u", "-W", "50%", url])
+            run([imgcat_path, "-u", "-W", "45%", url])
     else:
-        print('Error fetching gif')
+        print('Error fetching gif : Beta Keys are rate limited to 100 API requests per hour') 
     sys.exit()
 
 if args.dog:
@@ -90,5 +95,5 @@ with NamedTemporaryFile(delete=False, suffix='.png') as tmp_file:
 
 
 run(["echo"])
-run([imgcat_path, "-H", "70%", tmp_file_name])
+run([imgcat_path, "-H", "60%", tmp_file_name])
 os.remove(tmp_file_name)
