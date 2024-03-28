@@ -28,7 +28,7 @@ alias meow='~/imgdogcat/imgdogcat --cat'
 alias gg='~/imgdogcat/imgdogcat --gif'
 ```
 
-## imgdogcat v0.3.0
+## imgdogcat v0.3.1
 
 We are thrilled to present the release of imgdogcat v0.3.0, tailored for developers and animal enthusiasts. This innovative feature allows users to randomly display cat or dog images in their terminal, offering a delightful and refreshing break during coding sessions.
 
@@ -37,7 +37,9 @@ We are thrilled to present the release of imgdogcat v0.3.0, tailored for develop
 - `--cat`, `-c` option: Show a random cat picture.
 - `--dog`, `-d` option: Show a random dog picture.
 - `--gif`, `-g` option: Show a random k-pop gif.
+- `--api`, `-a` option: you can use your own api key to get the gif from giphy.
 - `--search`, `-s` option: Show a random gif with searched category
+- `--help`, `-h` option: Display help information.
 - No specific option: Randomly displays a cat or dog picture.
 
 ## Compatibility and Requirements
@@ -85,6 +87,7 @@ Execute the binary with your choice of option:
 ./imgdogcat --dog   # Displays a random dog image
 ./imgdogcat --gif  # Displays a random gif image
 ./imgdogcat --search # Displays a random gif image within searched category
+./imgdogcat --api <your_api_key> --gif # Displays a random gif image with your own api key
 ./imgdogcat         # Randomly displays a cat or dog image
 ```
 
