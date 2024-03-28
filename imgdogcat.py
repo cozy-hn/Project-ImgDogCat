@@ -15,7 +15,7 @@ parser = argparse.ArgumentParser(description='Fetch a random dog or cat image. +
 parser.add_argument('-d', '--dog', action='store_true', help='Fetch a random dog image.')
 parser.add_argument('-c', '--cat', action='store_true', help='Fetch a random cat image.')
 parser.add_argument('-g', '--gif', action='store_true', help='Fetch a random gif image.')
-parser.add_argument('-s', '--search', type=str, help='Fetch a random gif image based on search term.')
+parser.add_argument('-s', '--search', type=str, help='Fetch a random gif image based on search term. ex) @username+#tag')
 parser.add_argument('-a', '--api', type=str, help='you can use your own api key which you can get from giphy (only for gifs)')
 args = parser.parse_args()
 
